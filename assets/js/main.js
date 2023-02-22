@@ -73,12 +73,7 @@ cancelBtn.addEventListener("click", refreshSession);
 function refreshSession() {
 
     formAppear.classList.remove("form-generated");
-    // window.location.reload();
 
-//     if(window.location.reload()) {
-//         userPrezzo.innerHTML = 0;
-//         nomeUtente.innerHTML = "";
-//     }
 }
 
 

@@ -27,9 +27,9 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li>Services</li>
-                    <li>About Us</li>
-                    <li>Contact</li>
+                    <li>Servizi</li>
+                    <li>About</li>
+                    <li>Contattaci</li>
                 </ul>
             </nav>
             <div class="burger-ctn">
@@ -46,7 +46,7 @@
     <main>
         <div class="main-container">
             <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
-            <form action="#" method="get">
+            <form action="#" method="get" id="ms-form">
                 <div class="form-top">
                     <div>
                         <label for="name">Nome Cognome</label>
@@ -66,8 +66,8 @@
                     </div>
                 </div>
                 <div class="row btn-ctn">
-                    <input type="button" value="Genera">
-                    <input type="button" value="Annulla">
+                    <input type="button" value="Genera" class="generate">
+                    <input type="button" value="Annulla" class="cancel">
                 </div>
             </form>
             <h3>IL TUO BIGLIETTO</h3>
@@ -76,7 +76,7 @@
                 <div class="user-details">
                     <div class="left">
                         <h5>Nome Passagero</h5>
-                        <h6 id="user-name"></h6>
+                        <h6 id="user-name-gen"></h6>
                     </div>
                     <div class="right">
                         <div class="column">

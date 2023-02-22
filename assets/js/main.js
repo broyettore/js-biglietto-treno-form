@@ -27,52 +27,60 @@ function changeTheme() {
 }
 
 
+// DATI PER IL FORM
+
+const formAppear = document.querySelector(".form-bottom");
+
+const nomeUtente = document.getElementById("name").value;
+const nomeUtenteGen = document.getElementById("user-name-gen");
+const kmUtente = document.getElementById("distance").value;
+const etàUtente = document.getElementById("age");
+const userPrezzo = document.querySelector(".price");
+
+// Prezzo Biglietto calcolato
+let prezzoBase = 0.21 * kmUtente;
 
 
+// FORM BUTTONS 
+const cancelBtn = document.querySelector(".cancel")
+const prezzoGenera = document.querySelector(".generate");
 
 
+// EVENTO GENERA BIGLIETTO
 
+prezzoGenera.addEventListener("click", showPrice)
 
+function showPrice () {
 
+    formAppear.classList.add("form-generated");
 
+    nomeUtenteGen.innerHTML = nomeUtente;
+    userPrezzo.innerHTML = Number(prezzoBase);
 
+    // condizioni di sconto 
 
+    if (etàUtente.value == "1") {
+        userPrezzo.innerHTML = Number((prezzoBase -= prezzoBase * 0.2).toFixed(2));
+    } else if (etàUtente.value == "2") {
+        userPrezzo.innerHTML = Number((prezzoBase -= prezzoBase * 0.4).toFixed(2));
+    } 
+}
 
-// // VARIABILI 
+// EVENTO CANCELLA BIGLIETTO
 
-// const nomeUtente = document.getElementById("name");
-// const kmUtente = document.getElementById("distance").value;
-// const etàUtente = document.getElementById("age");
+cancelBtn.addEventListener("click", refreshSession);
 
-// const prezzoGenera = document.querySelector(".generate");
-// const userPrice = document.querySelector(".price");
+function refreshSession() {
 
-// const prezzoBase = 0.21 * kmUtente;
-// const scontoMinorenni = prezzoBase - (prezzoBase / 100) * 20
-// const scontoAnziani = prezzoBase - (prezzoBase / 100) * 40
+    formAppear.classList.remove("form-generated");
+    // window.location.reload();
 
-// // EVENTI 
-
-// prezzoGenera.addEventListener("click", showPrice)
-
-// function showPrice () {
-
-//     userPrice.innerHTML = prezzoBase
-
-//     // CONDIZIONI DI SCONTO 
-
-//     if (etàUtente.value == "user-age-small") {
-//         userPrice.innerHTML = Number(scontoMinorenni.toFixed(2));
-//     } else if (etàUtente.value == "user-age-old") {
-//         userPrice.innerHTML = Number(scontoAnziani.toFixed(2));
+//     if(window.location.reload()) {
+//         userPrezzo.innerHTML = 0;
+//         nomeUtente.innerHTML = "";
 //     }
-// }
+}
 
-// kmUtente.addEventListener("change", updateKm)
-
-// function updateKm () {
-//     userPrice.innerHTML = prezzoBase
-// }
 
 
 

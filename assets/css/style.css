@@ -179,6 +179,11 @@ form,
 }
 
 .form-bottom {
+    display: none;
+    transition: ease .40s;
+}
+
+.form-generated {
     display: flex;
     flex-direction: column;
     justify-content: center;

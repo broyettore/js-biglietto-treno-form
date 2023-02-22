@@ -114,6 +114,7 @@ input[type="button"] {
 
 main {
     background-color: #b91450;
+    height: calc(100vh - 60px);
     padding-top: 60px;
     display: flex;
     flex-direction: column;
@@ -237,7 +238,6 @@ form,
 @media screen and (min-width: 992px) {
 
     main {
-        height: calc(100vh - 60px);
         padding-top: 0;
     }
 

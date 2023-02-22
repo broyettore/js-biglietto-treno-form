@@ -14,7 +14,7 @@ function showMenu() {
     navMenu.classList.toggle("show");
 } 
 
-// THEME SWITCH 
+// THEME SWITCH ( ONLY VISUAL, WILL ADD EFFECT LATER)
 
 const themeLightBtn = document.querySelector(".ms-sun");
 
@@ -27,23 +27,18 @@ function changeTheme() {
 }
 
 
-// DATI PER IL FORM
+// FORM
 
-const formAppear = document.querySelector(".form-bottom");
-
-const nomeUtente = document.getElementById("name").value;
-const nomeUtenteGen = document.getElementById("user-name-gen");
-const kmUtente = document.getElementById("distance").value;
-const etàUtente = document.getElementById("age");
-const userPrezzo = document.querySelector(".price");
-
-// Prezzo Biglietto calcolato
-let prezzoBase = 0.21 * kmUtente;
+const formAppear = document.querySelector(".form-bottom");   // Biglietto generato
+const nomePassaggero = document.getElementById("user-name-gen"); //  Nome passagero generato
+const utentePrezzo = document.querySelector(".price"); // Prezzo generato
+const tipoBiglietto = document.querySelector(".ticket-type")  // tipo di biglietto
+const prezzoKm = 0.21;  // Prezzo Biglietto al km
 
 
 // FORM BUTTONS 
-const cancelBtn = document.querySelector(".cancel")
-const prezzoGenera = document.querySelector(".generate");
+const cancelBtn = document.querySelector(".cancel")     //button annulla
+const prezzoGenera = document.querySelector(".generate");    //button genera
 
 
 // EVENTO GENERA BIGLIETTO
@@ -52,27 +47,49 @@ prezzoGenera.addEventListener("click", showPrice)
 
 function showPrice () {
 
-    formAppear.classList.add("form-generated");
+    formAppear.classList.add("form-generated"); 
 
-    nomeUtenteGen.innerHTML = nomeUtente;
-    userPrezzo.innerHTML = Number(prezzoBase);
+    // variabili prese dall'utente
+    let nomeUtente = document.getElementById("name").value;  // nome utente inserito
+    let utenteKm = document.getElementById("distance").value; // km inseriti
+    let etàUtente = document.getElementById("age").value;  // fascia d'età selezionata
+    let bigliettoPrezzo = prezzoKm * utenteKm;
 
     // condizioni di sconto 
 
-    if (etàUtente.value == "1") {
-        userPrezzo.innerHTML = Number((prezzoBase -= prezzoBase * 0.2).toFixed(2));
-    } else if (etàUtente.value == "2") {
-        userPrezzo.innerHTML = Number((prezzoBase -= prezzoBase * 0.4).toFixed(2));
-    } 
+    if (etàUtente === "giovane") {
+        bigliettoPrezzo -= bigliettoPrezzo * 0.2;
+        tipoBiglietto.innerHTML = "Sconto Under 18"
+    } else if (etàUtente === "anziano") {
+        bigliettoPrezzo -= bigliettoPrezzo * 0.4;;
+        tipoBiglietto.innerHTML = "Sconto Over 65"
+    } else if (etàUtente === "adulto") {
+        tipoBiglietto.innerHTML = "Biglietto Standard"
+    } else {
+        tipoBiglietto.innerHTML = ""
+    }
+
+     // condizioni nel caso in cui vengono lasciati campi vuoti o 0km
+
+    if (nomeUtente == "" || (utenteKm == "0" || utenteKm == "")) {
+        alert("Campi Obbligatori");
+        formAppear.classList.remove("form-generated");
+    }
+
+    // variabili generate
+    nomePassaggero.innerHTML = nomeUtente;
+    utentePrezzo.innerHTML = Number(bigliettoPrezzo.toFixed(2)); // prezzo standard calcolato
+
 }
 
-// EVENTO CANCELLA BIGLIETTO
+// EVENTO SCOMPARE BIGLIETTO
 
 cancelBtn.addEventListener("click", refreshSession);
 
 function refreshSession() {
 
     formAppear.classList.remove("form-generated");
+    document.getElementById("ms-form").reset();
 
 }
 

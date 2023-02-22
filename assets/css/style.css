@@ -9,15 +9,74 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #000;
+    color: #fff;
+}
+
+/********* COMMON **********/
+
+.row {
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li, i {
+    cursor: pointer;
 }
 
 
-
-
-
-
 /*********** HEADER ************/
+
+.head-container {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+    color: #000;
+}
+
+.head-container img {
+    width: 100px;
+    background-color: #b91450;
+}
+
+.head-container button {
+    background-color: transparent;
+    border: 0;
+}
+
+.head-container i {
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    margin: 0 auto;
+    bottom: 0;
+}
+
+.nav-menu ul  {
+    align-items: center;
+}
+
+.nav-menu ul li {
+    padding: 10px;
+    margin: 0 10px;
+    transition: background-color .30s;
+}
+
+.nav-menu ul li:hover {
+    background-color: #b91450;
+    color: #fff;
+}
 
 
 
@@ -46,5 +105,18 @@ body {
 
 
 @media screen and (min-width: 992px) {
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        display: block;
+    }
+
+    .nav-menu ul {
+        display: flex;
+    }
     
 }

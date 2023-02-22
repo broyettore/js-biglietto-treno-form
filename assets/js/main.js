@@ -2,9 +2,9 @@
 
 // VARIABILI 
 
-const utenteNome = prompt("Ciao, come si chiama ?");
-const utenteKm = Number(prompt("Quanti km vuole percorrere ?"));
-const utenteEtà = Number(prompt("Quanti anni ha ?"));
+// const utenteNome = prompt("Ciao, come si chiama ?");
+// const utenteKm = Number(prompt("Quanti km vuole percorrere ?"));
+// const utenteEtà = Number(prompt("Quanti anni ha ?"));
 const prezzoBase = 0.21 * utenteKm
 const scontoMinorenni = prezzoBase - (prezzoBase / 100) * 20
 const scontoAnziani = prezzoBase - (prezzoBase / 100) * 40

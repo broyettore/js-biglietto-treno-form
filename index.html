@@ -22,7 +22,7 @@
     <!-- header  -->
     <header>
         <div class="head-container row">
-            <div>
+            <div class="logo-ctn">
                 <img src="assets/images/logo.jpg" alt="logo">
             </div>
             <nav class="nav-menu">
@@ -32,14 +32,73 @@
                     <li>Contact</li>
                 </ul>
             </nav>
-            <i class="fa-solid fa-bars hamburger"></i>
-            <i class="fa-solid fa-sun"></i>
+            <div class="burger-ctn">
+                <i class="fa-solid fa-bars hamburger"></i>
+            </div>
+            <div class="theme-ctn">
+                <i class="fa-solid fa-sun ms-sun"></i>
+            </div>
         </div>
     </header>
     <!-- /header  -->
 
     <!-- main -->
-    <main></main>
+    <main>
+        <div class="main-container">
+            <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+            <form action="#" method="get">
+                <div class="form-top">
+                    <div>
+                        <label for="name">Nome Cognome</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="distance">Km da percorrere</label>
+                        <input type="text" name="distance" id="distance">
+                    </div>
+                    <div>
+                        <label for="name">Fascia d'età</label>
+                        <select name="age" id="age">
+                            <option value="0">Maggiorenne</option>
+                            <option value="1">Minorenne</option>
+                            <option value="2">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row btn-ctn">
+                    <input type="button" value="Genera">
+                    <input type="button" value="Annulla">
+                </div>
+            </form>
+            <h3>IL TUO BIGLIETTO</h3>
+            <div class="form-bottom">
+                <h4>DETTAGLIO PASSAGERI</h4>
+                <div class="user-details">
+                    <div class="left">
+                        <h5>Nome Passagero</h5>
+                        <h6 id="user-name"></h6>
+                    </div>
+                    <div class="right">
+                        <div class="column">
+                            <span class="fw-bold">Offerta</span>
+                            <span>Biglietto standard</span>
+                        </div>
+                        <div class="column">
+                            <span class="fw-bold">Carrozza</span>
+                            <span>5</span>
+                        </div>
+                        <div class="column">
+                            <span class="fw-bold">Codice CP</span>
+                            <span>92911</span>
+                        </div>
+                        <div class="column">
+                            <span class="fw-bold">Costo biglietto</span>
+                            <span class="price"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
     <!-- /main -->
     
 

@@ -50,9 +50,9 @@ function showPrice () {
     formAppear.classList.add("form-generated"); 
 
     // variabili prese dall'utente
-    let nomeUtente = document.getElementById("name").value;  // nome utente inserito
-    let utenteKm = document.getElementById("distance").value; // km inseriti
-    let etàUtente = document.getElementById("age").value;  // fascia d'età selezionata
+    const nomeUtente = document.getElementById("name").value;  // nome utente inserito
+    const utenteKm = document.getElementById("distance").value; // km inseriti
+    const etàUtente = document.getElementById("age").value;  // fascia d'età selezionata
     let bigliettoPrezzo = prezzoKm * utenteKm; // calcolo del prezzo del biglietto
 
     // condizioni di sconto 
@@ -71,7 +71,7 @@ function showPrice () {
 
      // condizioni in cui vengono lasciati campi vuoti o 0km
 
-    if (nomeUtente == "" || (utenteKm == "0" || utenteKm == "")) {
+    if (nomeUtente == "" || etàUtente === "" || (utenteKm == "0" || utenteKm == "")) {
         alert("Campi Obbligatori");
         formAppear.classList.remove("form-generated");
     }

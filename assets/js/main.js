@@ -32,7 +32,7 @@ function changeTheme() {
 const formAppear = document.querySelector(".form-bottom");   // Biglietto generato
 const nomePassaggero = document.getElementById("user-name-gen"); //  Nome passagero generato
 const utentePrezzo = document.querySelector(".price"); // Prezzo generato
-const tipoBiglietto = document.querySelector(".ticket-type")  // tipo di biglietto
+const tipoBiglietto = document.querySelector(".ticket-type")  // tipo di biglietto generato
 const prezzoKm = 0.21;  // Prezzo Biglietto al km
 
 
@@ -53,7 +53,7 @@ function showPrice () {
     let nomeUtente = document.getElementById("name").value;  // nome utente inserito
     let utenteKm = document.getElementById("distance").value; // km inseriti
     let etàUtente = document.getElementById("age").value;  // fascia d'età selezionata
-    let bigliettoPrezzo = prezzoKm * utenteKm;
+    let bigliettoPrezzo = prezzoKm * utenteKm; // calcolo del prezzo del biglietto
 
     // condizioni di sconto 
 
@@ -69,7 +69,7 @@ function showPrice () {
         tipoBiglietto.innerHTML = ""
     }
 
-     // condizioni nel caso in cui vengono lasciati campi vuoti o 0km
+     // condizioni in cui vengono lasciati campi vuoti o 0km
 
     if (nomeUtente == "" || (utenteKm == "0" || utenteKm == "")) {
         alert("Campi Obbligatori");

@@ -64,14 +64,14 @@ function showPrice () {
 
     if (etàUtenteValue === "giovane") {
         bigliettoPrezzo -= bigliettoPrezzo * 0.2;
-        tipoBiglietto.innerHTML = "Sconto Under 18"
+        tipoBiglietto.innerHTML = "Sconto Under 18";
     } else if (etàUtenteValue === "anziano") {
         bigliettoPrezzo -= bigliettoPrezzo * 0.4;;
         tipoBiglietto.innerHTML = "Sconto Over 65"
     } else if (etàUtenteValue === "adulto") {
-        tipoBiglietto.innerHTML = "Biglietto Standard"
+        tipoBiglietto.innerHTML = "Biglietto Standard";
     } else {
-        tipoBiglietto.innerHTML = ""
+        tipoBiglietto.innerHTML = "";
     }
 
      // condizioni in cui vengono lasciati campi vuoti o 0km
@@ -83,9 +83,9 @@ function showPrice () {
 
     // variabili generate
     nomePassaggero.innerHTML = nomeUtenteValue;
-    utentePrezzo.innerHTML = bigliettoPrezzo.toFixed(2); // prezzo standard calcolato
+    utentePrezzo.innerHTML = Number(bigliettoPrezzo.toFixed(2)); // prezzo generato
     
-    console.log(typeof utentePrezzo)
+    console.log(typeof utentePrezzo.innerHTML)
     console.log(typeof utenteKmValue)
 
 }
